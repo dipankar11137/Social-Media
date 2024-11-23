@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { BsArrowUpRightCircleFill } from 'react-icons/bs';
+import {
+  BsArrowUpRightCircleFill,
+  BsStopwatch,
+} from 'react-icons/bs';
+import { FaBookmark, FaUserFriends } from 'react-icons/fa';
+import { FaLandmarkFlag } from 'react-icons/fa6';
 import { GoHome } from 'react-icons/go';
+import { MdGroups, MdOndemandVideo } from 'react-icons/md';
 
 
 const LeftSide = ({ handleHome }) => {
@@ -44,7 +50,7 @@ const LeftSide = ({ handleHome }) => {
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              <FaUserFriends className="text-xl text-blue-400" />
               Friend
             </button>
           </div>
@@ -55,8 +61,63 @@ const LeftSide = ({ handleHome }) => {
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
+              <BsStopwatch className="text-xl text-blue-400 " />
+              Memories
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button5')}
+            className={`${
+              button === 'button5' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <FaBookmark className="text-xl text-fuchsia-500" />
+              Save
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button6')}
+            className={`${
+              button === 'button6' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <MdGroups className="text-xl text-slate-100 bg-blue-500 rounded-full p-[2px]" />
+              Groups
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button7')}
+            className={`${
+              button === 'button7' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <MdOndemandVideo className="text-xl text-slate-100 " />
+              Videos
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button8')}
+            className={`${
+              button === 'button8' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <FaLandmarkFlag className="text-xl text-blue-400" />
+              Marketplace
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button9')}
+            className={`${
+              button === 'button9' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
               <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
-              Popular
+              Feeds
             </button>
           </div>
           <div
@@ -67,13 +128,32 @@ const LeftSide = ({ handleHome }) => {
           >
             <button className="flex gap-2 items-center  pl-2 ">
               <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
-              Popular
+              Events
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button5')}
+            className={`${
+              button === 'button5' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              Ads Manager
+            </button>
+          </div>
+          <div
+            onClick={() => setButton('button5')}
+            className={`${
+              button === 'button5' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+            } w-[180px] p-2 rounded-lg cursor-pointer`}
+          >
+            <button className="flex gap-2 items-center  pl-2 ">
+              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              See More
             </button>
           </div>
         </div>
-       
-    
-       
       </div>
     </div>
   );
