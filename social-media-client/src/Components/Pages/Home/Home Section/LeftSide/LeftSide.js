@@ -5,6 +5,7 @@ import {
 } from 'react-icons/bs';
 import { FaBookmark, FaUserFriends } from 'react-icons/fa';
 import { FaLandmarkFlag } from 'react-icons/fa6';
+import { FcFeedIn } from 'react-icons/fc';
 import { GoHome } from 'react-icons/go';
 import { MdGroups, MdOndemandVideo } from 'react-icons/md';
 
@@ -116,7 +117,7 @@ const LeftSide = ({ handleHome }) => {
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              <FcFeedIn  className="text-xl text-slate-100" />
               Feeds
             </button>
           </div>

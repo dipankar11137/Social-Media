@@ -10,7 +10,7 @@ import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Inquires from "./Components/Pages/Dashboard/Inquire/Inquires";
 import ShowAllQueries from "./Components/Pages/Dashboard/ShowAllQueries/ShowAllQueries";
 import Home from "./Components/Pages/Home/Home";
-import QuizSection from "./Components/Pages/Quiz/QuizSection";
+// import QuizSection from "./Components/Pages/Quiz/QuizSection";
 import Navbar from "./Components/Share/Navbar";
 import NotFound from "./Components/Share/NotFound";
 
@@ -45,14 +45,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home searchGet={searchGet} />}></Route>
-        <Route
-          path="/quiz"
-          element={
-            <RequireAuth>
-              <QuizSection />
-            </RequireAuth>
-          }
-        ></Route>
+       
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>

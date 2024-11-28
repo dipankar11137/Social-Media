@@ -78,10 +78,10 @@ const Navbar = ({ setSearchGet }) => {
         >
           <img
             className="h-12 mr-2 rounded-full"
-            src="https://seeklogo.com/images/E/education-book-sun-logo-B0AC2622BD-seeklogo.com.png"
+            src="https://seeklogo.com/images/S/superman-logo-E555F48FD9-seeklogo.com.png"
             alt=""
           />
-          Knowledge Café
+          Social Media
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex lg:pr-28 ml-40">
@@ -106,11 +106,6 @@ const Navbar = ({ setSearchGet }) => {
         {user ? (
           <div className="dropdown dropdown-end  mr-5">
             <ul className="flex gap-5 items-center">
-              {user && (
-                <li className="font-bold text-slate-400 hover:text-orange-400">
-                  <Link to="/quiz">Quiz</Link>
-                </li>
-              )}
               {user?.email === 'abc@def.com' && (
                 <li className="font-bold text-slate-400 hover:text-orange-400">
                   <Link to="/dashboard">Dashboard</Link>
