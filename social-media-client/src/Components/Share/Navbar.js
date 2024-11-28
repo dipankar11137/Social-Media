@@ -90,7 +90,7 @@ const Navbar = ({ setSearchGet }) => {
             <input
               value={searchQuery}
               onChange={handleSearch}
-              placeholder="🔍 Search Queries"
+              placeholder="🔍 Search Post"
               className="bg-slate-700 w-[550px] pl-3 p-[5px] rounded-lg text-slate-100"
               type="text"
               name=""

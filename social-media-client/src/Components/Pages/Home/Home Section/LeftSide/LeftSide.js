@@ -3,11 +3,16 @@ import {
   BsArrowUpRightCircleFill,
   BsStopwatch,
 } from 'react-icons/bs';
-import { FaBookmark, FaUserFriends } from 'react-icons/fa';
+import {
+  FaBookmark,
+  FaChevronCircleDown,
+  FaDeezer,
+  FaUserFriends,
+} from 'react-icons/fa';
 import { FaLandmarkFlag } from 'react-icons/fa6';
 import { FcFeedIn } from 'react-icons/fc';
 import { GoHome } from 'react-icons/go';
-import { MdGroups, MdOndemandVideo } from 'react-icons/md';
+import { MdEvent, MdGroups, MdOndemandVideo } from 'react-icons/md';
 
 
 const LeftSide = ({ handleHome }) => {
@@ -117,18 +122,18 @@ const LeftSide = ({ handleHome }) => {
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <FcFeedIn  className="text-xl text-slate-100" />
+              <FcFeedIn className="text-xl text-slate-100" />
               Feeds
             </button>
           </div>
           <div
-            onClick={() => setButton('button5')}
+            onClick={() => setButton('button150')}
             className={`${
-              button === 'button5' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+              button === 'button150' ? 'bg-slate-800' : 'hover:bg-slate-800 '
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              <MdEvent className="text-xl text-orange-500" />
               Events
             </button>
           </div>
@@ -139,18 +144,18 @@ const LeftSide = ({ handleHome }) => {
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              <FaDeezer className="text-xl text-slate-100" />
               Ads Manager
             </button>
           </div>
           <div
-            onClick={() => setButton('button5')}
+            onClick={() => setButton('button11')}
             className={`${
-              button === 'button5' ? 'bg-slate-800' : 'hover:bg-slate-800 '
+              button === 'button11' ? 'bg-slate-800' : 'hover:bg-slate-800 '
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
             <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
+              <FaChevronCircleDown className="text-xl text-slate-500 " />
               See More
             </button>
           </div>

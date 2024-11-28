@@ -84,7 +84,7 @@ const HomeSection = ({ quire, handleRemove, setMId }) => {
               </button>
             )}
             <div className="flex justify-between  w-full ">
-              <div className="flex items-end">
+              <div className="flex items-end ">
                 <img
                   className="h-10 w-10 rounded-full"
                   src={quire?.img}
