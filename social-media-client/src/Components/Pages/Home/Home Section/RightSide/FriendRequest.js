@@ -10,7 +10,7 @@ const FriendRequest = () => {
       <div className="flex gap-3">
         <div>
           <img
-            className="h-12 w-12 rounded-full"
+            className="h-10 w-12 rounded-full"
             src="https://media.istockphoto.com/id/1391534246/photo/portrait-of-happy-indian-girl-in-desert-village-india.jpg?s=612x612&w=0&k=20&c=GhDY8SveqC2FWbeZSFo8kzjad0zdonitdiUcfiq_lXY="
             alt=""
           />
