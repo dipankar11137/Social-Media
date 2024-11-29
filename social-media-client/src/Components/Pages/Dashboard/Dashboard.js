@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaChild } from 'react-icons/fa';
 import { MdDashboard } from 'react-icons/md';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import auth from '../../../firebase.init';
+import { auth } from '../../../firebase.init';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);

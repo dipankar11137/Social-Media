@@ -4,7 +4,7 @@ import { FaArrowAltCircleLeft, FaCommentAlt, FaShare } from 'react-icons/fa';
 import { GoDotFill } from 'react-icons/go';
 import { WhatsappShareButton } from 'react-share';
 import { toast } from 'react-toastify';
-import auth from '../../../../firebase.init';
+import { auth } from '../../../../firebase.init';
 import Comments from './Comments/Comments';
 import './Scroll.css';
 

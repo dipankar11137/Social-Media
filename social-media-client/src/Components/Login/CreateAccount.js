@@ -8,7 +8,8 @@ import {
 
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
+import { auth } from "../../firebase.init";
+// import auth from "../../firebase.init";
 
 const CreateAccount = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,7 +19,7 @@ const CreateAccount = () => {
     handleSubmit,
     reset,
   } = useForm();
-      const imageHostKey = '994b53a825eae75f8000377c3706bb31';
+      const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);

@@ -11,6 +11,8 @@ import Inquires from "./Components/Pages/Dashboard/Inquire/Inquires";
 import ShowAllQueries from "./Components/Pages/Dashboard/ShowAllQueries/ShowAllQueries";
 import Home from "./Components/Pages/Home/Home";
 // import QuizSection from "./Components/Pages/Quiz/QuizSection";
+import Messenger from "./Components/Pages/Messanger/Messanger";
+import ProfilePage from "./Components/Pages/ProfilePage/ProfilePage";
 import Navbar from "./Components/Share/Navbar";
 import NotFound from "./Components/Share/NotFound";
 
@@ -37,7 +39,7 @@ function App() {
       {/* <CreateAccount /> */}
       <div
         className={`fixed  bg-white w-full shadow-md top-0 ${
-          isScrolled ? ' fixed top-0 z-50 duration-1000' : ''
+          isScrolled ? ' fixed top-0 z-50 duration-1000' : 'z-50'
         }`}
       >
         <Navbar setSearchGet={setSearchGet} />
@@ -45,9 +47,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home searchGet={searchGet} />}></Route>
-       
+
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/messenger" element={<Messenger />}></Route>
+        <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
 
         <Route

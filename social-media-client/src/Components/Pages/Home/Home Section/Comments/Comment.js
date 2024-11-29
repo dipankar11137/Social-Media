@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoDotFill } from 'react-icons/go';
-import auth from '../../../../../firebase.init';
+import { auth } from '../../../../../firebase.init';
 
 const Comment = ({ comment, setRId, handleCommentRemove }) => {
   const [time, setTime] = useState(0);
