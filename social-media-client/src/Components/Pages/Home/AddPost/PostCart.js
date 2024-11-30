@@ -103,7 +103,7 @@ const PostCart = ({user}) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control w-full ">
             <label className="label">
-              <span className="label-text">Quires / Question</span>
+              <span className="label-text">Text / Image</span>
             </label>
             <textarea
               type="text"

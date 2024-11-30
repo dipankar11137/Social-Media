@@ -37,7 +37,7 @@ const AddPost = () => {
                     src="https://pngimg.com/d/question_mark_PNG128.png"
                     alt=""
                   />
-                  <h1>Queries / Doubt</h1>
+                  <h1>Text / Image</h1>
                 </div>
                 <div className="flex items-end gap-1">
                   <img
@@ -85,7 +85,7 @@ const AddPost = () => {
                   src="https://pngimg.com/d/question_mark_PNG128.png"
                   alt=""
                 />
-                <h1>Queries / Doubt</h1>
+                <h1>Photos / Text</h1>
               </div>
               <div className="flex items-end gap-1">
                 <img

@@ -143,15 +143,14 @@ const HomeSection = ({ quire, handleRemove, setMId }) => {
           </div>
 
           <div className="mt-3 font-normal  text-lg">
+            <h1 className='ml-1'>{quire?.description}</h1>
             {quire?.image && (
               <img
-                className="w-full h-[350px] mb-2"
+                className="w-full h-[350px] mt-2"
                 src={quire?.image}
                 alt=""
               />
             )}
-
-            <h1>{quire?.description}</h1>
           </div>
 
           <div className="mt-4 pb-2 flex items-center ">

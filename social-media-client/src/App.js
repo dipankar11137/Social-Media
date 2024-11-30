@@ -12,6 +12,7 @@ import ShowAllQueries from "./Components/Pages/Dashboard/ShowAllQueries/ShowAllQ
 import Home from "./Components/Pages/Home/Home";
 // import QuizSection from "./Components/Pages/Quiz/QuizSection";
 import Messenger from "./Components/Pages/Messanger/Messanger";
+import EditProfile from "./Components/Pages/ProfilePage/EditProfile";
 import ProfilePage from "./Components/Pages/ProfilePage/ProfilePage";
 import Navbar from "./Components/Share/Navbar";
 import NotFound from "./Components/Share/NotFound";
@@ -52,6 +53,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/messenger" element={<Messenger />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
+        <Route path="/editProfile" element={<EditProfile />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
 
         <Route

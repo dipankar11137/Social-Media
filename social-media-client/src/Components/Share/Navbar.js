@@ -118,7 +118,7 @@ const Navbar = ({ setSearchGet }) => {
                 <Link to="/profile">Profile</Link>
               </li>
               <li>
-                <Link to="/">Settings</Link>
+                <Link to="/editProfile">Settings</Link>
               </li>
 
               <li className=" font-bold ">

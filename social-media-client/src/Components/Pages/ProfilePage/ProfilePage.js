@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import usePersonPost from '../../hooks/usePersonPost';
 import useUser from '../../hooks/useUser';
 import HomeSection from '../Home/Home Section/HomeSection';
@@ -6,7 +7,12 @@ import HomeSection from '../Home/Home Section/HomeSection';
 const ProfilePage = () => {
   const { user } = useUser()
   const [myPosts] = usePersonPost()
+  const navigator=useNavigate()
   // console.log('dado',myPosts)
+
+  const handleProfile = () => {
+    navigator('/editProfile')
+  }
   return (
     <div className="bg-gray-900 text-white min-h-screen pt-[66px]">
       {/* Profile Header */}
@@ -32,7 +38,7 @@ const ProfilePage = () => {
               <button className="bg-blue-600 px-4 py-2 rounded">
                 Add Story
               </button>
-              <button className="bg-gray-700 px-4 py-2 rounded">
+              <button onClick={handleProfile} className="bg-gray-700 px-4 py-2 rounded">
                 Edit Profile
               </button>
             </div>
@@ -50,6 +56,8 @@ const ProfilePage = () => {
             <p>Studied at Dhaka University, Dhaka</p>
             <p>Single</p>
             <p>Followed by 1,522 people</p>
+            {user?.bio && <p>Bio : {user?.bio}</p>}
+            {user?.workplace && <p>Workplace : {user?.workplace}</p>}
           </div>
 
           {/* Photos Section */}
