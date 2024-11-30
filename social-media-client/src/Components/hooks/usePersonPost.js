@@ -4,7 +4,8 @@ import { auth } from '../../firebase.init';
 
 const usePersonPost = () => {
   const [users] = useAuthState(auth);
-    const [myPosts, setMyPost] = useState([])
+  const [myPosts, setMyPost] = useState([])
+  
      useEffect(() => {
        fetch(`http://localhost:5000/post/${users?.email}`)
          .then(res => res.json())

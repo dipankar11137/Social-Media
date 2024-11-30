@@ -1,12 +1,13 @@
 import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init";
+import useUser from "../hooks/useUser";
 
 const Navbar = ({ setSearchGet }) => {
-  const [user] = useAuthState(auth);
-  const email = user?.email;
+  // const [user] = useAuthState(auth);
+  // const email = user?.email;
+  const {user}=useUser()
   const navigate = useNavigate();
   const [booking, setBooking] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
@@ -15,21 +16,10 @@ const Navbar = ({ setSearchGet }) => {
     signOut(auth);
   };
 
-  useEffect(() => {
-    fetch(`https://boxberry.onrender.com/carBooking/${email}`)
-      .then(res => res.json())
-      .then(data => setBooking(data));
-  }, [booking, email]);
-
   const [quires, setQuires] = useState([]);
 
-  const [id, setMId] = useState('');
-  // console.log(id)
-  useEffect(() => {
-    fetch('http://localhost:5000/quires')
-      .then(res => res.json())
-      .then(data => setQuires(data));
-  }, [quires]);
+
+// console.log(user)
 
   const handleSearch = e => {
     const query = e.target.value;
@@ -103,7 +93,59 @@ const Navbar = ({ setSearchGet }) => {
       </div>
       {/* Image */}
       <div className="navbar-end">
+        <h1 className="mr-2">{user?.name}</h1>
         {user ? (
+          <div className="dropdown dropdown-end  mr-5 pr-10">
+            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+              <div className="w-8 h-8 rounded-full">
+                {user?.img ? (
+                  <img src={user?.img} alt="" />
+                  
+                ) : (
+                  <img
+                    src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
+                    alt=""
+                  />
+                )}
+                
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800 dark:border-gray-700 hover:dark:bg-purple-900"
+            >
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="/">Settings</Link>
+              </li>
+
+              <li className=" font-bold ">
+                {user ? (
+                  <button
+                    className=" font-bold text-orange-500"
+                    onClick={logout}
+                  >
+                    Sign Out
+                  </button>
+                ) : (
+                  <Link to="/login">Login</Link>
+                )}
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <ul className="mr-5">
+            <li>
+              <Link className="font-bold text-2xl pr-10 pl-5" to="/login">
+                Login
+              </Link>
+            </li>
+          </ul>
+        )}
+
+        {/* {user ? (
           <div className="dropdown dropdown-end  mr-5">
             <ul className="flex gap-5 items-center">
               {user?.email === 'abc@def.com' && (
@@ -125,7 +167,7 @@ const Navbar = ({ setSearchGet }) => {
               <Link to="/login">Login</Link>
             </li>
           </ul>
-        )}
+        )} */}
       </div>
     </div>
   );

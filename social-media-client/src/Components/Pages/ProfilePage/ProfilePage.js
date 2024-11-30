@@ -6,7 +6,7 @@ import HomeSection from '../Home/Home Section/HomeSection';
 const ProfilePage = () => {
   const { user } = useUser()
   const [myPosts] = usePersonPost()
-  console.log('dado',myPosts)
+  // console.log('dado',myPosts)
   return (
     <div className="bg-gray-900 text-white min-h-screen pt-[66px]">
       {/* Profile Header */}
@@ -71,16 +71,7 @@ const ProfilePage = () => {
                 </div>
               ))}
 
-              {/* {myPosts.map(post => (
-                <>
-                  <img
-                    className="w-full h-20 object-cover rounded"
-                    
-                    src={post?.image || {myPosts.length % 2 ====1 ? 'https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp':'https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-800x525.jpg'}}
-                    alt={post?.name}
-                  />
-                </>
-              ))} */}
+             
             </div>
           </div>
 
