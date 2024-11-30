@@ -1,12 +1,12 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init";
 import useUser from "../hooks/useUser";
 
 const Navbar = ({ setSearchGet }) => {
-  // const [user] = useAuthState(auth);
-  // const email = user?.email;
+    const [users] = useAuthState(auth);
   const {user}=useUser()
   const navigate = useNavigate();
   const [booking, setBooking] = useState([]);
@@ -94,7 +94,7 @@ const Navbar = ({ setSearchGet }) => {
       {/* Image */}
       <div className="navbar-end">
         <h1 className="mr-2">{user?.name}</h1>
-        {user ? (
+        {users ? (
           <div className="dropdown dropdown-end  mr-5 pr-10">
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-8 h-8 rounded-full">

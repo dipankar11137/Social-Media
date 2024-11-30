@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
-  BsArrowUpRightCircleFill,
-  BsStopwatch,
+  BsStopwatch
 } from 'react-icons/bs';
 import {
   FaBookmark,
@@ -13,12 +12,18 @@ import { FaLandmarkFlag } from 'react-icons/fa6';
 import { FcFeedIn } from 'react-icons/fc';
 import { GoHome } from 'react-icons/go';
 import { MdEvent, MdGroups, MdOndemandVideo } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+import useUser from '../../../../hooks/useUser';
 
 
 const LeftSide = ({ handleHome }) => {
   const [button, setButton] = useState('');
-  const [tropics, setTropics] = useState(false);
-  const [resources, setResources] = useState(false);
+  const { user } = useUser();
+  const navigator=useNavigate()
+
+  const handleClick = () => {
+    navigator('/profile')
+  }
 
   return (
     <div className="text-slate-300">
@@ -44,9 +49,9 @@ const LeftSide = ({ handleHome }) => {
               button === 'button2' ? 'bg-slate-800' : 'hover:bg-slate-800 '
             } w-[180px] p-2 rounded-lg cursor-pointer`}
           >
-            <button className="flex gap-2 items-center  pl-2 ">
-              <BsArrowUpRightCircleFill className="text-xl text-slate-100" />
-              Name
+            <button onClick={handleClick} className="flex gap-2 items-center  pl-2 ">
+              <img className="h-10 w-10 rounded-full" src={user?.img} alt="" />
+              <h1> {user?.name}</h1>
             </button>
           </div>
           <div
