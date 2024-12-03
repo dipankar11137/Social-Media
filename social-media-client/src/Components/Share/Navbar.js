@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init";
@@ -17,6 +17,11 @@ const Navbar = ({ setSearchGet }) => {
   };
 
   const [quires, setQuires] = useState([]);
+   useEffect(() => {
+     fetch('http://localhost:5000/quires')
+       .then(res => res.json())
+       .then(data => setQuires(data));
+   }, []);
 
 
 // console.log(user)
@@ -24,6 +29,7 @@ const Navbar = ({ setSearchGet }) => {
   const handleSearch = e => {
     const query = e.target.value;
     setSearchQuery(query);
+    
 
     // Filter cards based on search query
     const filtered = quires.filter(car => {

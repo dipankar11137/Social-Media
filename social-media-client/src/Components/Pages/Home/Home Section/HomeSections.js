@@ -11,9 +11,9 @@ const HomeSections = ({ searchGet }) => {
     fetch('http://localhost:5000/quires')
       .then(res => res.json())
       .then(data => setQuires(data));
-  }, [quires]);
+  }, []);
 
-
+console.log(searchGet)
 
   const handleRemove = () => {
     const proceed = window.confirm('Are You Sure ?');

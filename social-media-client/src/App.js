@@ -47,13 +47,41 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<Home searchGet={searchGet} />}></Route>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home searchGet={searchGet} />
+            </RequireAuth>
+          }
+        ></Route>
 
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/messenger" element={<Messenger />}></Route>
-        <Route path="/profile" element={<ProfilePage />}></Route>
-        <Route path="/editProfile" element={<EditProfile />}></Route>
+        <Route
+          path="/messenger"
+          element={
+            <RequireAuth>
+              <Messenger />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <ProfilePage />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/editProfile"
+          element={
+            <RequireAuth>
+              <EditProfile />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/*" element={<NotFound />}></Route>
 
         <Route

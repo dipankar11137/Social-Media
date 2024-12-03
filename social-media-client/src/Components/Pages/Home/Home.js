@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BsFillQuestionSquareFill } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
 import AddPost from './AddPost/AddPost';
 import HomeSections from './Home Section/HomeSections';
-import InquireFrom from './Home Section/InquireFrom/InquireFrom';
 import LeftSide from './Home Section/LeftSide/LeftSide';
 import RightSide from './Home Section/RightSide/RightSide';
 
@@ -39,7 +37,7 @@ const Home = ({ searchGet }) => {
         </div>
       </div>
 
-      <div className="fixed z-50 right-5 bottom-10 ">
+      {/* <div className="fixed z-50 right-5 bottom-10 ">
         {opinion && (
           <div className="bg-green-600 mr-7 p-3 rounded-t-lg rounded-l-lg ">
             <InquireFrom setOpinion={setOpinion} />
@@ -55,7 +53,7 @@ const Home = ({ searchGet }) => {
             <BsFillQuestionSquareFill onClick={() => setOpinion(true)} />
           )}
         </h1>
-      </div>
+      </div> */}
     </div>
   );
 };
