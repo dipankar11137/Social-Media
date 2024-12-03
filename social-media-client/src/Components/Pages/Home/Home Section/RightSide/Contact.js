@@ -129,7 +129,7 @@ const Contact = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg">
             {/* Header */}
-            <div className="flex items-center p-4 bg-gray-900 rounded-t-lg">
+            <div className="flex items-center py-2 px-4  bg-primary rounded-t-lg">
               <img
                 src={selectedUser?.img}
                 alt="Selected User"
@@ -137,7 +137,7 @@ const Contact = () => {
               />
               <div className="ml-4">
                 <h2 className="text-white font-bold">{selectedUser?.name}</h2>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-300">
                   {selectedUser.online ? 'Online' : 'Offline'}
                 </p>
               </div>
@@ -151,60 +151,64 @@ const Contact = () => {
 
             {/* Chat Messages */}
             <div className="p-3 overflow-y-auto max-h-64">
-              {(messageHistory[receiverId] || []).map((msg, index) => (
-                <div
-                  key={index}
-                  className={`mb-4 flex ${
-                    msg.senderId === email ? 'justify-end' : 'justify-start'
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <div>
-                        {msg.senderId === email ? null : (
-                          <img
-                            className="h-6 rounded-full w-6"
-                            src={selectedUser?.img}
-                            alt=""
-                          />
-                        )}
-                      </div>
-                      <div
-                        className={`p-2 rounded-lg max-w-xs ${
-                          msg.senderId === email
-                            ? 'bg-blue-600 text-white'
-                            : 'bg-gray-700 text-white'
-                        }`}
-                      >
-                        <p className="text-sm">{msg.text}</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-end mt-2">
-                        {msg.senderId === email ? (
-                          <img
-                            className="w-4 h-4 rounded-full"
-                            src={user?.img}
-                            alt=""
-                          />
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                      {/* <p className="text-xs text-end mt-1">
-                        {msg.senderId === email ? 'You' : ''}
-                      </p> */}
+              {(messageHistory[receiverId] || []).map((msg, index, array) => {
+                const isLastMessage = index === array.length - 1;
 
-                      <p className="text-xs text-end mt-1 text-gray-400">
-                        {new Date(msg.timestamp).toLocaleTimeString([], {
-                          hour: '2-digit',
-                          minute: '2-digit',
-                        })}
-                      </p>
+                return (
+                  <div
+                    key={index}
+                    className={`mb-4 flex ${
+                      msg.senderId === email ? 'justify-end' : 'justify-start'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <div>
+                          {msg.senderId === email ? null : (
+                            <img
+                              className="h-6 rounded-full w-6"
+                              src={selectedUser?.img}
+                              alt=""
+                            />
+                          )}
+                        </div>
+                        <div
+                          className={`p-2 rounded-lg max-w-xs ${
+                            msg.senderId === email
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-gray-700 text-white'
+                          }`}
+                          title={new Date(msg.timestamp).toLocaleString([], {
+                            dateStyle: 'short',
+                            timeStyle: 'short',
+                          })}
+                        >
+                          <p className="text-sm">{msg.text}</p>
+                        </div>
+                      </div>
+                      {isLastMessage && (
+                        <div className="mt-2">
+                          <div className="flex justify-end">
+                            {msg.senderId === email ? (
+                              <img
+                                className="w-4 h-4 rounded-full"
+                                src={user?.img}
+                                alt=""
+                              />
+                            ) : null}
+                          </div>
+                          <p className="text-xs text-end mt-1 text-gray-400">
+                            {new Date(msg.timestamp).toLocaleTimeString([], {
+                              hour: '2-digit',
+                              minute: '2-digit',
+                            })}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
               {/* Invisible div to scroll to the bottom */}
               <div ref={messagesEndRef} />
             </div>
